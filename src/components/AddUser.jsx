@@ -40,7 +40,7 @@ const AddUser = () => {
                 
                 <br/>
 
-                <button onClick={()=>addUserDetails}>Submit</button>
+                <button onClick={()=>addUserDetails()}>Submit</button>
             </form>
         </div>
     )
