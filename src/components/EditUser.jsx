@@ -8,7 +8,7 @@ const defaultValue = {
     mobile:'',
 }
 
-const AddUser = () => {
+const EditUser = () => {
 
     const [user,setUser] = useState(defaultValue);
 
@@ -27,7 +27,7 @@ const AddUser = () => {
     
     return(
         <div>
-            <h1>Add User</h1>
+            <h1>Edit User</h1>
             <form>
                 <label htmlFor="name">Name</label>
                 <input onChange={(e) => onValueChange(e)} name="name" />
@@ -44,10 +44,10 @@ const AddUser = () => {
                 
                 <br/>
 
-                <button onClick={()=>addUserDetails()} >Submit</button>
+                <button onClick={()=>addUserDetails()} >Edit</button>
             </form>
         </div>
     )
 }
 
-export default AddUser;
+export default EditUser;
