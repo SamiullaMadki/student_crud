@@ -1,6 +1,6 @@
 import '../App.css';
 import { useEffect, useState } from 'react';
-import { getUsers } from '../Service/api';
+import { getUsers, deleteUser } from '../Service/api';
 import { Link } from 'react-router-dom';
 
 const AllUsers = () => {
@@ -14,6 +14,11 @@ const AllUsers = () => {
     const getAllUsers = async () => {
         let response = await getUsers();
         setUsers(response.data);
+    }
+
+    const deleteUserDetails = async (id) =>{
+        await deleteUser(id);
+        getAllUsers();
     }
 
     return (
@@ -36,8 +41,8 @@ const AllUsers = () => {
                             <td>{user.email}</td>
                             <td>{user.mobile}</td>
                             <td>
-                                <button variant='contained' style={{color: 'blue', marginRight: '4px'}} component={Link} to={`/edit/${user._id}`}>Edit</button>
-                                <button variant='contained' style={{color: 'red'}}>Delete</button>
+                                <button variant='contained' style={{ color: 'blue', marginRight: '4px' }} component={Link} to={`/edit/${user._id}`}>Edit</button>
+                                <button variant='contained' style={{ color: 'red' }} onClick= {() => deleteUserDetails(user._id)}>Delete</button>
                             </td>
                         </tr>
                     ))
