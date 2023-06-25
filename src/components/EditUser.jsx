@@ -31,8 +31,8 @@ const EditUser = () => {
     }
 
     const editUserDetails = async ()=>{
-        await editUser(user,id);
         navigate("/all");
+        await editUser(user,id);
     }
     
     return(

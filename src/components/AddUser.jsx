@@ -21,8 +21,8 @@ const AddUser = () => {
     }
 
     const addUserDetails = async ()=>{
-        await addUser(user);
         navigate("/all");
+        await addUser(user);
     }
     
     return(
