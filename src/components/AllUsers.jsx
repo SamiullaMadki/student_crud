@@ -22,35 +22,35 @@ const AllUsers = () => {
     }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    users.map(user => (
-                        <tr key={user._id}>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.mobile}</td>
-                            <td>
-                                <Link to={`/edit/${user._id}`}>
-                                    <button style={{ color: 'blue', marginRight: '4px' }}>Edit</button>
-                                </Link>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        users.map(user => (
+                            <tr key={user._id}>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.mobile}</td>
+                                <td>
+                                    <Link to={`/edit/${user._id}`}>
+                                        <button style={{ color: 'blue', marginRight: '4px' }}>Edit</button>
+                                    </Link>
 
-                                <button style={{ color: 'red' }} onClick={() => deleteUserDetails(user._id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
+                                    <button style={{ color: 'red' }} onClick={() => deleteUserDetails(user._id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
 
-        </table>
+            </table>
     )
 }
 
