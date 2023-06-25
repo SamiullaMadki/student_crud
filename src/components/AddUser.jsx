@@ -22,7 +22,7 @@ const AddUser = () => {
 
     const addUserDetails = async ()=>{
         await addUser(user);
-        navigate('/');
+        navigate("/all");
     }
     
     return(

@@ -16,7 +16,7 @@ const AllUsers = () => {
         setUsers(response.data);
     }
 
-    const deleteUserDetails = async (id) =>{
+    const deleteUserDetails = async (id) => {
         await deleteUser(id);
         getAllUsers();
     }
@@ -25,7 +25,6 @@ const AllUsers = () => {
         <table>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile</th>
@@ -36,13 +35,15 @@ const AllUsers = () => {
                 {
                     users.map(user => (
                         <tr key={user._id}>
-                            <td>{user._id}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
                             <td>{user.mobile}</td>
                             <td>
-                                <button style={{ color: 'blue', marginRight: '4px' }} component={Link} to={`/edit/${user._id}`} >Edit</button>
-                                <button style={{ color: 'red' }} onClick= {() => deleteUserDetails(user._id)}>Delete</button>
+                                <Link to={`/edit/${user._id}`}>
+                                    <button style={{ color: 'blue', marginRight: '4px' }}>Edit</button>
+                                </Link>
+
+                                <button style={{ color: 'red' }} onClick={() => deleteUserDetails(user._id)}>Delete</button>
                             </td>
                         </tr>
                     ))

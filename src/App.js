@@ -10,10 +10,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-    <NavLink to='/' style={{ marginRight: '100px'}}>All Users</NavLink>
+    <NavLink to='/all' style={{ marginRight: '100px'}}>All Users</NavLink>
     <NavLink to='/add'>Add User</NavLink>
       <Routes>
-        <Route path='/' element={<AllUsers />} />
+        <Route path='/all' element={<AllUsers />} />
         <Route path='/add' element={<AddUser />} />
         <Route path='/edit/:id' element={<EditUser />} />
       </Routes>
