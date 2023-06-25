@@ -41,8 +41,8 @@ const AllUsers = () => {
                             <td>{user.email}</td>
                             <td>{user.mobile}</td>
                             <td>
-                                <button variant='contained' style={{ color: 'blue', marginRight: '4px' }} component={Link} to={`/edit/${user._id}`}>Edit</button>
-                                <button variant='contained' style={{ color: 'red' }} onClick= {() => deleteUserDetails(user._id)}>Delete</button>
+                                <button style={{ color: 'blue', marginRight: '4px' }} component={Link} to={`/edit/${user._id}`} >Edit</button>
+                                <button style={{ color: 'red' }} onClick= {() => deleteUserDetails(user._id)}>Delete</button>
                             </td>
                         </tr>
                     ))

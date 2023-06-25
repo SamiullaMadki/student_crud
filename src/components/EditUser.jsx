@@ -1,6 +1,6 @@
-import { useState,useEffect } from "react";
-import { editUser,getUser } from "../Service/api";
-import { useNavigate,useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { editUser, getUser } from "../Service/api";
+import { useNavigate, useParams } from "react-router-dom";
 
 const defaultValue = {
     name:'',
@@ -54,7 +54,7 @@ const EditUser = () => {
                 
                 <br/>
 
-                <button onClick={()=>editUserDetails()} >Edit</button>
+                <button onClick={()=>editUserDetails()} >Edit User</button>
             </form>
         </div>
     )
